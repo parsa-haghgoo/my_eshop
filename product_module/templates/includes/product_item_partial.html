@@ -1,0 +1,24 @@
+{% load poll_extras %}
+<div class="col-sm-4">
+    <div class="product-image-wrapper">
+        <div class="single-products">
+            <div class="productinfo text-center">
+                <img src="{{ product.product_image.url }}" width="150px" height="150px" alt="">
+                <h2>{{ product.price|three_digits_currency }} </h2>
+                <p>{{ product.title }}</p>
+            </div>
+            <div class="product-overlay">
+                <div class="overlay-content">
+                    <h2>{{ product.price|three_digits_currency }} </h2>
+                    <p>{{ product.title }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="choose">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="{% url 'product-detail' pk=product.id %}"><i class="fa fa-plus-square"></i>مشاهده
+                    جزییات</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
